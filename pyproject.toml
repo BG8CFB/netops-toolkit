@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "netops-toolkit"
-version = "0.1.0"
+version = "0.2.0"
 description = "Network engineer automation toolkit: batch info collection, config search, offline compliance audit (H3C/Huawei/Cisco/Ruijie)"
 readme = "README.md"
 requires-python = ">=3.8"
