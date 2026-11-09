@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netops-toolkit"
+version = "0.1.0"
+description = "Network engineer automation toolkit: batch info collection, config search, offline compliance audit (H3C/Huawei/Cisco/Ruijie)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [{name = "BG8CFB"}]
+keywords = ["network", "automation", "h3c", "huawei", "cisco", "netops", "sysadmin", "audit"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: System :: Networking",
+  "License :: OSI Approved :: MIT License",
+]
+dependencies = ["paramiko>=3.4", "PyYAML>=6.0"]
+
+[project.scripts]
+netops-toolkit = "netops_toolkit.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["netops_toolkit*"]
