@@ -4,19 +4,32 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "netops-toolkit"
-version = "0.4.0"
-description = "Network engineer automation toolkit: batch info collection, config search, offline compliance audit (H3C/Huawei/Cisco/Ruijie)"
+version = "0.4.1"
+description = "Network engineer automation toolkit: batch info collection, config search, MAC/IP locate, topology map, compliance audit (H3C/Huawei/Cisco/Ruijie)"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [{name = "BG8CFB"}]
-keywords = ["network", "automation", "h3c", "huawei", "cisco", "netops", "sysadmin", "audit"]
+keywords = ["network", "automation", "h3c", "huawei", "cisco", "ruijie", "netops", "sysadmin", "audit", "topology", "switch", "cli"]
 classifiers = [
-  "Programming Language :: Python :: 3",
-  "Topic :: System :: Networking",
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: System Administrators",
+  "Intended Audience :: Telecommunications Industry",
   "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: System :: Networking",
+  "Topic :: System :: Systems Administration",
 ]
 dependencies = ["paramiko>=3.4", "PyYAML>=6.0"]
+
+[project.urls]
+Homepage = "https://bg8cfb.github.io/netops-toolkit/"
+Source = "https://github.com/BG8CFB/netops-toolkit"
 
 [project.scripts]
 netops-toolkit = "netops_toolkit.cli:main"
