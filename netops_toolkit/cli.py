@@ -19,6 +19,9 @@ def main(argv=None):
     p4.add_argument("inventory"); p4.add_argument("target")
     p3 = sub.add_parser("audit", help="离线配置合规审计 -> CSV")
     p3.add_argument("backup_dir"); p3.add_argument("-o", "--out", default="audit.csv")
+    p7 = sub.add_parser("topology", help="从备份提取 LLDP/CDP 邻居 -> 邻接表 CSV + Mermaid")
+    p7.add_argument("backup_dir"); p7.add_argument("-o", "--out", default="topology_edges.csv")
+    p7.add_argument("--mermaid", default=None)
     a = ap.parse_args(argv)
     if a.cmd == "info":
         from .batch_info_cmd import main as m
