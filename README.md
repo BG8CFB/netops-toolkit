@@ -43,12 +43,6 @@ devices:
 
 MIT License
 
+## 拓扑提取 (v0.4.0+)
 
-## v0.2.0 — locate: 全网定位 MAC/IP
-
-```bash
-netops-toolkit locate devices.yml aa:bb:cc:dd:ee:ff
-netops-toolkit locate devices.yml 10.1.1.23
-```
-
-核心/汇聚查 ARP+MAC 表锁定源端口 → 沿 MAC 表逐跳下钻到接入端口, 打印完整定位链。H3C/华为/思科/锐捷四厂商命令适配。
+`netops-toolkit topology backups/ -o edges.csv --mermaid topo.mmd` 解析备份目录里 display lldp neighbor brief / show cdp neighbor 输出，生成邻接表 CSV 和 Mermaid 拓扑图。
