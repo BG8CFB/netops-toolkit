@@ -11,6 +11,8 @@ def main(argv=None):
     p1.add_argument("-w", "--workers", type=int, default=8)
     p2 = sub.add_parser("find", help="在配置备份目录搜索 IP/MAC/关键字")
     p2.add_argument("backup_dir"); p2.add_argument("pattern")
+    p4 = sub.add_parser("locate", help="全网定位 MAC/IP -> 接入端口")
+    p4.add_argument("inventory"); p4.add_argument("target")
     p3 = sub.add_parser("audit", help="离线配置合规审计 -> CSV")
     p3.add_argument("backup_dir"); p3.add_argument("-o", "--out", default="audit.csv")
     a = ap.parse_args(argv)
@@ -21,6 +23,10 @@ def main(argv=None):
     elif a.cmd == "find":
         from .find_ip_cmd import main as m
         sys.argv = ["find_ip", a.backup_dir, a.pattern]
+        m()
+    elif a.cmd == "locate":
+        from .locate_cmd import main as m
+        sys.argv = ["port_locator", a.inventory, a.target]
         m()
     elif a.cmd == "audit":
         from .config_audit_cmd import main as m
