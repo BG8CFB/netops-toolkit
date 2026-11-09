@@ -42,3 +42,13 @@ devices:
 - [netops-scripts](https://github.com/BG8CFB/netops-scripts) — Pro 脚本包仓库
 
 MIT License
+
+
+## v0.2.0 — locate: 全网定位 MAC/IP
+
+```bash
+netops-toolkit locate devices.yml aa:bb:cc:dd:ee:ff
+netops-toolkit locate devices.yml 10.1.1.23
+```
+
+核心/汇聚查 ARP+MAC 表锁定源端口 → 沿 MAC 表逐跳下钻到接入端口, 打印完整定位链。H3C/华为/思科/锐捷四厂商命令适配。
