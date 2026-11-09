@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>netops-toolkit — 网络工程师 Python 免费工具箱（批量采集/定位/审计/拓扑）</title>
+<meta name="description" content="netops-toolkit: 一条 pip 命令装好网络运维工具箱。批量采集设备信息、IP/MAC 定位、配置审计、接口报表、配置归档、LLDP/CDP 拓扑提取，支持 H3C/华为/思科/锐捷。">
+<meta name="keywords" content="网络运维工具,netops,批量采集,python 网络自动化,LLDP 拓扑,配置审计,网络巡检脚本">
+<link rel="canonical" href="https://bg8cfb.github.io/netops-toolkit/">
+<style>
+body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7}
+.wrap{max-width:900px;margin:0 auto;padding:48px 24px}
+h1{font-size:2em;background:linear-gradient(90deg,#58a6ff,#bc8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{color:#8b949e;font-size:1.05em}
+pre{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;overflow-x:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:28px 0}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:18px}
+.card h3{margin:0 0 8px;color:#58a6ff;font-size:1.05em}
+.card code{background:#21262d;padding:2px 6px;border-radius:4px;font-size:.85em;color:#79c0ff}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th,td{border:1px solid #30363d;padding:10px;text-align:left}
+th{background:#161b22;color:#58a6ff}
+.cta{display:inline-block;background:#238636;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600;margin-top:8px}
+a{color:#58a6ff}
+footer{border-top:1px solid #30363d;margin-top:48px;padding-top:20px;color:#8b949e;font-size:.9em}
+</style>
+</head>
+<body><div class="wrap">
+<h1>netops-toolkit</h1>
+<p class="tag">网络工程师的免费 Python 工具箱 — 7 个子命令覆盖采集、定位、审计、报表、归档、拓扑</p>
+<pre>pip install netops-toolkit</pre>
+<div class="grid">
+<div class="card"><h3>info — 批量采集</h3><code>netops-toolkit info</code><p>并发 SSH 采集版本/CPU/内存/运行时长，输出 CSV。</p></div>
+<div class="card"><h3>find — IP/MAC 搜索</h3><code>netops-toolkit find</code><p>在备份目录中递归搜索 IP 与 MAC 地址。</p></div>
+<div class="card"><h3>locate — 全网定位</h3><code>netops-toolkit locate</code><p>核心→汇聚→接入逐跳下钻，定位终端所在交换机端口。</p></div>
+<div class="card"><h3>save — 配置归档</h3><code>netops-toolkit save</code><p>批量保存并拉取 running-config，按时间戳归档。</p></div>
+<div class="card"><h3>interfaces — 接口报表</h3><code>netops-toolkit interfaces</code><p>解析 display interface，流量/CRC/错误率 CSV + 异常 Top10。</p></div>
+<div class="card"><h3>audit — 配置审计</h3><code>netops-toolkit audit</code><p>6 条合规规则检查（telnet/SNMP 弱口令/明文 HTTP 等）。</p></div>
+<div class="card"><h3>topology — 拓扑提取 <span style="color:#3fb950">NEW</span></h3><code>netops-toolkit topology</code><p>解析 LLDP/CDP 邻居表，输出邻接 CSV 与 Mermaid 拓扑图。</p></div>
+</div>
+<table><tr><th>项目</th><th>地址</th></tr>
+<tr><td>源码与文档</td><td><a href="https://github.com/BG8CFB/netops-toolkit">github.com/BG8CFB/netops-toolkit</a></td></tr>
+<tr><td>PyPI</td><td><a href="https://pypi.org/project/netops-toolkit/">pypi.org/project/netops-toolkit</a></td></tr>
+<tr><td>配置加密备份（Pro ¥99）</td><td><a href="https://bg8cfb.github.io/netcfg-vault/">netcfg-vault</a></td></tr>
+<tr><td>命令速查表（Pro ¥39）</td><td><a href="https://bg8cfb.github.io/netops-cheatsheets/">netops-cheatsheets</a></td></tr>
+</table>
+<footer>支持 H3C Comware / 华为 VRP / 思科 IOS / 锐捷。MIT License.</footer>
+</div></body></html>
