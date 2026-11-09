@@ -11,6 +11,10 @@ def main(argv=None):
     p1.add_argument("-w", "--workers", type=int, default=8)
     p2 = sub.add_parser("find", help="在配置备份目录搜索 IP/MAC/关键字")
     p2.add_argument("backup_dir"); p2.add_argument("pattern")
+    p5 = sub.add_parser("save", help="批量保存设备配置到时间戳归档目录")
+    p5.add_argument("inventory"); p5.add_argument("-o", "--out", default="archives")
+    p6 = sub.add_parser("interfaces", help="解析 display interface -> CSV 接口报告")
+    p6.add_argument("backup_dir"); p6.add_argument("-o", "--out", default="interfaces.csv")
     p4 = sub.add_parser("locate", help="全网定位 MAC/IP -> 接入端口")
     p4.add_argument("inventory"); p4.add_argument("target")
     p3 = sub.add_parser("audit", help="离线配置合规审计 -> CSV")
@@ -23,6 +27,14 @@ def main(argv=None):
     elif a.cmd == "find":
         from .find_ip_cmd import main as m
         sys.argv = ["find_ip", a.backup_dir, a.pattern]
+        m()
+    elif a.cmd == "save":
+        from .save_cmd import main as m
+        sys.argv = ["batch_save", a.inventory, "-o", a.out]
+        m()
+    elif a.cmd == "interfaces":
+        from .interfaces_cmd import main as m
+        sys.argv = ["interface_report", a.backup_dir, "-o", a.out]
         m()
     elif a.cmd == "locate":
         from .locate_cmd import main as m
